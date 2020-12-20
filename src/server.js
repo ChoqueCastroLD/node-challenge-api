@@ -16,6 +16,7 @@ if (!module.parent) {
     app.use(logger());
 }
 app.use(router.routes());
+app.use(router.allowedMethods());
 
 if (!module.parent) {
     app.listen(process.env.PORT, () => {
