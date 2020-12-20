@@ -1,0 +1,37 @@
+{
+  "name": "node-challenge-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "migration:init": "migrate init --migrations-dir ./migrations",
+    "migration:create": "migrate create --migrations-dir ./migrations --template-file ./migrations/.template.js",
+    "migration:list": "migrate list --migrations-dir ./migrations",
+    "migration:up": "migrate up --migrations-dir ./migrations --env ./.env",
+    "migration:down": "migrate down --migrations-dir ./migrations --env ./.env",
+    "postinstall": "npx prisma generate"
+  },
+  "keywords": [],
+  "author": "ChoqueCastroLD",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^2.13.1",
+    "aobj": "^1.0.7",
+    "dotenv": "^6.2.0",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.0.0",
+    "mysqlm": "^2.0.6",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.13.1",
+    "jest": "^26.6.3",
+    "migrate": "^1.7.0",
+    "supertest": "^6.0.1"
+  }
+}
